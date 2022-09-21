@@ -5,7 +5,8 @@
     "deploy-program": "anchor deploy",
     "deploy-idl": "anchor idl upgade -f target/idl/myepicproject.json `solana address -k target/deploy/myepicproject-keypair.json`",
     "deploy": "yarn deploy-program && yarn deploy-idl",
-    "test": "achor test"
+    "test": "achor test",
+    "program-id": "solana address -k target/deploy/myepicproject-keypair.json"
   },
   "dependencies": {
     "@project-serum/anchor": "^0.25.0"

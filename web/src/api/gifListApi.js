@@ -86,6 +86,5 @@ const getProvider = () => {
 const getProgram = async () => {
   // Get metadata about your solana program
   const idl = await Program.fetchIdl(programID, getProvider());
-  // Create a program that you can call
   return new Program(idl, programID, getProvider());
 };

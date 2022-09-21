@@ -13,8 +13,8 @@ const App = () => {
     <div className="App">
       <div className={walletAddress ? "authed-container" : "container"}>
         <div className="header-container">
-          <p className="header">🖼 GIF Master</p>
-          <p className="sub-text">View your GIF collection in the metaverse ✨</p>
+          <p className="header">🖼 GIF Portal</p>
+          <p className="sub-text">Public GIF collection on Solana blockchain ✨</p>
           {walletAddress ? (
             shouldInitializeAccount ? (
               <InitializeProgramButton onInitializeClick={onInitializeAccount} />
