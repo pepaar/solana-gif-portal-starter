@@ -34,9 +34,10 @@ export const GifGallery = ({ gifList, onNewGifAdded }) => {
         </button>
       </form>
       <div className="gif-grid">
-        {gifList.map((gif) => (
-          <div className="gif-item" key={gif}>
-            <img src={gif} alt={gif} />
+        {gifList.map((gif, index) => (
+          <div className="gif-item" key={index}>
+            <img src={gif.gifLink} alt={gif.gifLink} />
+            <div className="gif-item-user">Added by: {gif.userAddress.toString()}</div>
           </div>
         ))}
       </div>

@@ -1,33 +1,13 @@
 import "./App.css";
-import { useEffect, useState } from "react";
 import { useSolanaWallet } from "./hooks/useSolanaWallet";
 import { ConnectButton } from "./components/ConnectButton";
 import { GifGallery } from "./components/GifGallery";
-
-const TEST_GIFS = [
-  "https://media.giphy.com/media/3o7TKpzsXWPTApaBCU/giphy.gif",
-  "https://media.giphy.com/media/3o7TKWahTGim2UIQQU/giphy.gif",
-  "https://media.giphy.com/media/xEromGTgh6rcc/giphy.gif",
-];
+import { InitializeProgramButton } from "./components/InitializeProgramButton";
+import { useGifList } from "./hooks/useGifList";
 
 const App = () => {
-  const [gifList, setGifList] = useState([]);
   const { walletAddress, connectWallet } = useSolanaWallet();
-
-  const onNewGifAdded = async (gifLink) => {
-    setGifList([gifLink, ...gifList]);
-  };
-
-  useEffect(() => {
-    if (walletAddress) {
-      console.log("Fetching GIF list...");
-
-      // Call Solana program here.
-
-      // Set state
-      setGifList(TEST_GIFS);
-    }
-  }, [walletAddress]);
+  const { gifList, shouldInitializeAccount, onAddNewGifLink, onInitializeAccount } = useGifList(walletAddress);
 
   return (
     <div className="App">
@@ -36,7 +16,11 @@ const App = () => {
           <p className="header">🖼 GIF Master</p>
           <p className="sub-text">View your GIF collection in the metaverse ✨</p>
           {walletAddress ? (
-            <GifGallery gifList={gifList} onNewGifAdded={onNewGifAdded} />
+            shouldInitializeAccount ? (
+              <InitializeProgramButton onInitializeClick={onInitializeAccount} />
+            ) : (
+              <GifGallery gifList={gifList} onNewGifAdded={onAddNewGifLink} />
+            )
           ) : (
             <ConnectButton onConnectClick={connectWallet} />
           )}
