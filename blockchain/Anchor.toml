@@ -2,7 +2,7 @@
 seeds = false
 skip-lint = false
 [programs.devnet]
-myepicproject = "GBbwGcLbUndsxGxh5un8mPM9kFGtagtB4gKGzsakuwM3"
+gifportal = "GzYepFckF3B1PqvREVMH679hBgdBedcoK4Cf13WXV6hc"
 
 [registry]
 url = "https://api.apr.dev"
@@ -12,4 +12,4 @@ cluster = "devnet"
 wallet = "/Users/petarpaar/.config/solana/id.json"
 
 [scripts]
-test = "node tests/myepicproject.js"
+test = "node tests/gifportal.js"

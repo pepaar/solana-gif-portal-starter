@@ -10,8 +10,8 @@ const arr = Object.values(kp._keypair.secretKey);
 const secret = new Uint8Array(arr);
 const baseAccount = web3.Keypair.fromSecretKey(secret);
 
-// This is the address of your solana program, if you forgot, just run solana address -k target/deploy/myepicproject-keypair.json
-const programID = new PublicKey("GBbwGcLbUndsxGxh5un8mPM9kFGtagtB4gKGzsakuwM3");
+// This is the address of your solana program, if you forgot, just run solana address -k target/deploy/gifportal-keypair.json
+const programID = new PublicKey("GzYepFckF3B1PqvREVMH679hBgdBedcoK4Cf13WXV6hc");
 
 // Set our network to devnet.
 const network = clusterApiUrl("devnet");

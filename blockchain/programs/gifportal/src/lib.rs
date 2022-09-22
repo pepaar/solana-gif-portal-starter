@@ -4,10 +4,10 @@ use anchor_lang::prelude::*;
 // declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
 
 // devnet
-declare_id!("GBbwGcLbUndsxGxh5un8mPM9kFGtagtB4gKGzsakuwM3");
+declare_id!("GzYepFckF3B1PqvREVMH679hBgdBedcoK4Cf13WXV6hc");
 
 #[program]
-pub mod myepicproject {
+pub mod gifportal {
     use super::*;
     pub fn start_stuff_off(ctx: Context<StartStuffOff>) -> Result <()> {
     // Get a reference to the account.

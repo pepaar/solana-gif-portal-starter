@@ -2,7 +2,7 @@
 seeds = false
 skip-lint = false
 [programs.localnet]
-myepicproject = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+gifportal = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
 
 [registry]
 url = "https://api.apr.dev"
@@ -12,4 +12,4 @@ cluster = "localnet"
 wallet = "/Users/petarpaar/.config/solana/id.json"
 
 [scripts]
-test = "node tests/myepicproject.js"
+test = "node tests/gifportal.js"
